@@ -1,0 +1,26 @@
+{
+
+    "version": "0.2.0",
+    "configurations": [
+        
+
+
+        {
+            "name": "portal_pasien",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "portal_pasien (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "portal_pasien (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "291208993578",
+    "project_id": "portal-pasien-c95a1",
+    "storage_bucket": "portal-pasien-c95a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291208993578:android:5f2374535f73f5f4fc1c53",
+        "android_client_info": {
+          "package_name": "com.smarthub.portal_pasien"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyQ2rbLGbHaHt0IvfCqGrob95LevY8KFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
