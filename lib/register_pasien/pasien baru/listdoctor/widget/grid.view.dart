@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class GridViewDoctor extends StatefulWidget {
   const GridViewDoctor({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<GridViewDoctor> createState() => _GridViewDoctorState();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portal_pasien/register_pasien/pasien%20baru/listdoctor/widget/grid.view.dart';
 
 class ListDoctor extends StatefulWidget {
-  ListDoctor({Key? key}) : super(key: key);
+  const ListDoctor({super.key});
 
   @override
   State<ListDoctor> createState() => _ListDoctorState();

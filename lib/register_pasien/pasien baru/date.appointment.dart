@@ -53,7 +53,7 @@ class Appointment extends StatelessWidget {
                         controller: appoinntmennt,
                         text: "Pilih Tanggal",
                         textInputType: TextInputType.name,
-                        obsecure: false),
+                        obscure: false),
                   ),
                   const SizedBox(
                     height: 560,

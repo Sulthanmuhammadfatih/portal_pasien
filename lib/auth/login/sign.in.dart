@@ -8,9 +8,7 @@ import 'package:portal_pasien/auth/login/sign.in.with.number.dart';
 import 'package:portal_pasien/auth/signUp/sign.up.number.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({
-    Key? key,
-  }) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -21,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController passwordController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future _signIn() async {
+  Future<void> _signIn() async {
     try {
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
         email: emailController.text.trim(),
@@ -29,26 +27,33 @@ class _LoginPageState extends State<LoginPage> {
       );
       // ignore: unused_local_variable
       User? user = userCredential.user;
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const DashboardPage()));
+      Navigator.push(
+        // ignore: use_build_context_synchronously
+        context,
+        MaterialPageRoute(builder: (context) => const DashboardPage()),
+      );
     } catch (e) {
+      // ignore: avoid_print
       print("Gagal masuk:$e");
       showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text("Gagal Masuk"),
-              content: const Text(
-                  "email atau kata sandi anda salah, silahkan coba lagi. "),
-              actions: <Widget>[
-                TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text("OK"))
-              ],
-            );
-          });
+        // ignore: use_build_context_synchronously
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("Gagal Masuk"),
+            content: const Text(
+                "email atau kata sandi anda salah, silahkan coba lagi. "),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text("OK"),
+              )
+            ],
+          );
+        },
+      );
     }
   }
 
@@ -92,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                     controller: emailController,
                     text: "Email",
                     textInputType: TextInputType.emailAddress,
-                    obsecure: false,
+                    obscure: false,
                     validator: (email) {
                       if (email == null || email.isEmpty) {
                         return 'Mohon di isi email anda';
@@ -107,10 +112,10 @@ class _LoginPageState extends State<LoginPage> {
                     controller: passwordController,
                     text: "Password",
                     textInputType: TextInputType.visiblePassword,
-                    obsecure: true,
+                    obscure: true,
                     validator: (password) {
                       if (password == null || password.isEmpty) {
-                        return 'Mohon di isi email anda';
+                        return 'Mohon di isi kata sandi anda';
                       }
                       return null;
                     },
@@ -163,16 +168,15 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class ClickableText extends StatelessWidget {
-  const ClickableText({
-    super.key,
-  });
+  const ClickableText({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => RegistrationPage()));
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const RegistrationPage()));
       },
       child: Text(
         "Register",

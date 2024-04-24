@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ListViewPoli extends StatelessWidget {
-  const ListViewPoli({Key? key}) : super(key: key);
+  const ListViewPoli({super.key});
 
   @override
   Widget build(BuildContext context) {

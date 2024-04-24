@@ -3,7 +3,7 @@ import 'package:portal_pasien/auth/login/sign.in.dart';
 import 'package:portal_pasien/Custom/custom_button.dart';
 
 class OnBoardingPage extends StatefulWidget {
-  OnBoardingPage({Key? key}) : super(key: key);
+  const OnBoardingPage({super.key});
 
   @override
   State<OnBoardingPage> createState() => _OnBoardingPageState();
@@ -56,7 +56,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 child: CustomButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                        MaterialPageRoute(builder: (context) => const LoginPage()));
                   },
                   text: "Get Started",
                 ),

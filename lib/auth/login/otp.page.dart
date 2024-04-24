@@ -59,7 +59,7 @@ class _OnTimePasswordState extends State<OnTimePassword> {
                   ),
                 ),
                 const Text(
-                  "We'll send you verfication code, after send your number phone",
+                  "We'll send you verification code, after send your number phone",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 17,
@@ -74,7 +74,7 @@ class _OnTimePasswordState extends State<OnTimePassword> {
                   controller: otpSignIp,
                   text: "OTP",
                   textInputType: TextInputType.number,
-                  obsecure: false,
+                  obscure: false,
                 ),
                 const SizedBox(
                   height: 15,

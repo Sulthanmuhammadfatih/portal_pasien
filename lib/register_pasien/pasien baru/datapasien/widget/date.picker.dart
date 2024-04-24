@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class datePicker extends StatelessWidget {
-  const datePicker({
-    super.key,
-  });
+  const datePicker({super.key});
 
   @override
   Widget build(BuildContext context) {

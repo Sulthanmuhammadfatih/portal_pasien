@@ -38,7 +38,7 @@ class InputRM extends StatelessWidget {
                         controller: inputNomerRM,
                         text: "Masukan Nomer RM Anda",
                         textInputType: TextInputType.number,
-                        obsecure: false,
+                        obscure: false,
                       ),
                       const Text(
                         "Ini gw cuman iseng bikin content",

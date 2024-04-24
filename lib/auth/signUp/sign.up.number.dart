@@ -8,7 +8,7 @@ import 'package:portal_pasien/auth/login/sign.in.dart';
 import 'package:portal_pasien/auth/signUp/sign.up.with.email.dart';
 
 class RegistrationPage extends StatefulWidget {
-  RegistrationPage({Key? key}) : super(key: key);
+  const RegistrationPage({super.key});
 
   @override
   State<RegistrationPage> createState() => _RegistrationPageState();

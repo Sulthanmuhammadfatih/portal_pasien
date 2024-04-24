@@ -66,7 +66,7 @@ class _PaymentTypeState extends State<PaymentType> {
                       controller: paymentType,
                       text: "Pilih Pembayaran",
                       textInputType: TextInputType.name,
-                      obsecure: false,
+                      obscure: false,
                       validator: (payment) {
                         if (payment == null || payment.isEmpty) {
                           return 'Isi pembayaran';

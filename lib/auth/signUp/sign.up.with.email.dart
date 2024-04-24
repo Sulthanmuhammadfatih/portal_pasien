@@ -6,7 +6,7 @@ import 'package:portal_pasien/auth/login/sign.in.dart';
 import 'package:portal_pasien/auth/signUp/sign.up.number.dart';
 
 class SignUpWithEmail extends StatefulWidget {
-  SignUpWithEmail({Key? key}) : super(key: key);
+  const SignUpWithEmail({super.key});
 
   @override
   State<SignUpWithEmail> createState() => _SignUpWithEmailState();
@@ -57,7 +57,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                 controller: namaPertama,
                 text: "Nama Pertama",
                 textInputType: TextInputType.name,
-                obsecure: false,
+                obscure: false,
               ),
               const SizedBox(
                 height: 15,
@@ -66,7 +66,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                 controller: namaTerakhir,
                 text: "Nama Terakhir",
                 textInputType: TextInputType.name,
-                obsecure: false,
+                obscure: false,
               ),
               const SizedBox(
                 height: 15,
@@ -75,7 +75,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                 controller: email,
                 text: "Email",
                 textInputType: TextInputType.emailAddress,
-                obsecure: false,
+                obscure: false,
                 validator: (email) {
                   if (email == null || email.isEmpty) {
                     return "Tolong di isi form ini";
@@ -90,7 +90,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                 controller: password,
                 text: "Password",
                 textInputType: TextInputType.visiblePassword,
-                obsecure: true,
+                obscure: true,
                 validator: (password) {
                   if (password == null || password.isEmpty) {
                     return "Tolong di isi form ini";

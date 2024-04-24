@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portal_pasien/register_pasien/pasien%20baru/poli/widget/listview.dart';
 
 class PoliPage extends StatelessWidget {
-  const PoliPage({Key? key}) : super(key: key);
+  const PoliPage({super.key});
 
   @override
   Widget build(BuildContext context) {

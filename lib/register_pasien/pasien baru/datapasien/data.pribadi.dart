@@ -81,7 +81,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                             controller: nama,
                             text: 'Nama',
                             textInputType: TextInputType.name,
-                            obsecure: false,
+                            obscure: false,
                             validator: (nama) {
                               if (nama == null || nama.isEmpty) {
                                 return 'please enter your name';
@@ -95,7 +95,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                             controller: jenisKelamin,
                             text: 'Jenis Kelamin',
                             textInputType: TextInputType.name,
-                            obsecure: false,
+                            obscure: false,
                             validator: (jenisKelamin) {
                               if (jenisKelamin == null ||
                                   jenisKelamin.isEmpty) {
@@ -110,7 +110,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                             controller: tempatlahir,
                             text: 'Tempat Lahir',
                             textInputType: TextInputType.name,
-                            obsecure: false,
+                            obscure: false,
                             validator: (tempatlahir) {
                               if (tempatlahir == null || tempatlahir.isEmpty) {
                                 return 'please enter your place of birth';
@@ -128,7 +128,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                             controller: nomerHandphonne,
                             text: 'Nomer Handphone',
                             textInputType: TextInputType.number,
-                            obsecure: false,
+                            obscure: false,
                             validator: (nomerHandphonne) {
                               if (nomerHandphonne == null ||
                                   nomerHandphonne.isEmpty) {
@@ -143,7 +143,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                             controller: agama,
                             text: 'Agama',
                             textInputType: TextInputType.name,
-                            obsecure: false,
+                            obscure: false,
                             validator: (agama) {
                               if (agama == null || agama.isEmpty) {
                                 return 'please enter your region';
@@ -157,7 +157,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                             controller: pekerjaan,
                             text: 'Pekerjaan',
                             textInputType: TextInputType.name,
-                            obsecure: false,
+                            obscure: false,
                             validator: (pekerjaan) {
                               if (pekerjaan == null || pekerjaan.isEmpty) {
                                 return 'please enter your work';
@@ -171,7 +171,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                             controller: penanggungJawab,
                             text: 'Penanggung Jawab',
                             textInputType: TextInputType.name,
-                            obsecure: false,
+                            obscure: false,
                             validator: (penanggungJawab) {
                               if (penanggungJawab == null ||
                                   penanggungJawab.isEmpty) {
@@ -186,7 +186,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                             controller: statusPernikahan,
                             text: 'Status Pernikahan',
                             textInputType: TextInputType.name,
-                            obsecure: false,
+                            obscure: false,
                             validator: (statusPernikahan) {
                               if (statusPernikahan == null ||
                                   statusPernikahan.isEmpty) {
@@ -201,7 +201,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                           controller: negara,
                           text: 'Kewarganegaraan',
                           textInputType: TextInputType.name,
-                          obsecure: false,
+                          obscure: false,
                           validator: (negara) {
                             if (negara == null || negara.isEmpty) {
                               return 'Mohon di isi form kewarganegaraan';
@@ -226,7 +226,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                               }
                               return null;
                             },
-                            obsecure: false),
+                            obscure: false),
                         const SizedBox(
                           height: 40,
                         ),

@@ -22,9 +22,7 @@ class _RecentFragmentState extends State<RecentFragment> {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
             ),
-            Container(
-              
-            )
+            Container()
           ],
         ),
       )),

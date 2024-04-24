@@ -10,10 +10,10 @@ class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
 
   @override
-  State<DashboardPage> createState() => _DashboardPaggeState();
+  State<DashboardPage> createState() => _DashboardPageState();
 }
 
-class _DashboardPaggeState extends State<DashboardPage> {
+class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -28,10 +28,10 @@ class _DashboardPaggeState extends State<DashboardPage> {
                 ),
                 child: Column(
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        const Column(
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -52,7 +52,7 @@ class _DashboardPaggeState extends State<DashboardPage> {
                             ),
                           ],
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 5,
                         ),
                         SizedBox(

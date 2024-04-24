@@ -5,8 +5,7 @@ class CustomOutlineButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const CustomOutlineButton(
-      {Key? key, required this.onPressed, required this.text})
-      : super(key: key);
+      {super.key, required this.onPressed, required this.text});
 
   @override
   Widget build(BuildContext context) {
