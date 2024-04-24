@@ -27,71 +27,81 @@ class _DropDownAlamatState extends State<DropDownAlamat> {
     );
     var listData = jsonDecode(response.body)["provinsi"];
     setState(() {
-      _dataProv = listData;
+      _dataProv = listData ?? [];
     });
     print("data : $listData");
   }
 
   void getDetailProv() async {
-    final response = await http.get(
-      Uri.parse(
-          "https://dev.farizdotid.com/api/daerahindonesia/provinsi/$_getProv"),
-      headers: {"Accept": "application/json"},
-    );
-    var listData = jsonDecode(response.body);
-    setState(() {
-      _nameProv = listData['nama'];
-    });
+    if (_getProv != null) {
+      final response = await http.get(
+        Uri.parse(
+            "https://dev.farizdotid.com/api/daerahindonesia/provinsi/$_getProv"),
+        headers: {"Accept": "application/json"},
+      );
+      var listData = jsonDecode(response.body);
+      setState(() {
+        _nameProv = listData['nama'];
+      });
+    }
   }
 
   void getDistrict() async {
-    final response = await http.get(
-      Uri.parse(
-          "https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=$_getProv"),
-      headers: {"Accept": "application/json"},
-    );
-    var listData = jsonDecode(response.body)["kota_kabupaten"];
-    setState(() {
-      _dataDisct = listData;
-    });
-    print("data : $listData");
+    if (_getProv != null) {
+      final response = await http.get(
+        Uri.parse(
+            "https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=$_getProv"),
+        headers: {"Accept": "application/json"},
+      );
+      var listData = jsonDecode(response.body)["kota_kabupaten"];
+      setState(() {
+        _dataDisct = listData ?? [];
+      });
+      print("data : $listData");
+    }
   }
 
   void getDetailDistrict() async {
-    final response = await http.get(
-      Uri.parse(
-          "https://dev.farizdotid.com/api/daerahindonesia/kota/$_getDisct"),
-      headers: {"Accept": "application/json"},
-    );
-    var listData = jsonDecode(response.body);
-    setState(() {
-      _nameDisct = listData['nama'];
-    });
+    if (_getDisct != null) {
+      final response = await http.get(
+        Uri.parse(
+            "https://dev.farizdotid.com/api/daerahindonesia/kota/$_getDisct"),
+        headers: {"Accept": "application/json"},
+      );
+      var listData = jsonDecode(response.body);
+      setState(() {
+        _nameDisct = listData['nama'];
+      });
+    }
   }
 
   void getSubDistrict() async {
-    final response = await http.get(
-      Uri.parse(
-          "https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=$_getDisct"),
-      headers: {"Accept": "application/json"},
-    );
-    var listData = jsonDecode(response.body);
-    setState(() {
-      _dataSubDisct = listData;
-    });
-    print("data : $listData");
+    if (_getDisct != null) {
+      final response = await http.get(
+        Uri.parse(
+            "https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=$_getDisct"),
+        headers: {"Accept": "application/json"},
+      );
+      var listData = jsonDecode(response.body)["kecamatan"];
+      setState(() {
+        _dataSubDisct = listData ?? [];
+      });
+      print("data : $listData");
+    }
   }
 
   void getDetailSubDistrict() async {
-    final response = await http.get(
-      Uri.parse(
-          "https://dev.farizdotid.com/api/daerahindonesia/kecamatan/$_getSubDisct"),
-      headers: {"Accept": "application/json"},
-    );
-    var listData = jsonDecode(response.body);
-    setState(() {
-      _nameSubDisct = listData['nama'];
-    });
+    if (_getSubDisct != null) {
+      final response = await http.get(
+        Uri.parse(
+            "https://dev.farizdotid.com/api/daerahindonesia/kecamatan/$_getSubDisct"),
+        headers: {"Accept": "application/json"},
+      );
+      var listData = jsonDecode(response.body)["nama"];
+      setState(() {
+        _nameSubDisct = listData;
+      });
+    }
   }
 
   @override
@@ -167,12 +177,13 @@ class _DropDownAlamatState extends State<DropDownAlamat> {
                 ),
                 hint: const Text("kecamatan"),
                 value: _getSubDisct,
-                items: _dataSubDisct.map((item) {
-                  return DropdownMenuItem(
-                    child: Text(item['nama']),
-                    value: item['id'].toString(),
-                  );
-                }).toList(),
+                items: _dataSubDisct?.map((item) {
+                      return DropdownMenuItem(
+                        child: Text(item['nama'] ?? ''),
+                        value: item['id'].toString(),
+                      );
+                    })?.toList() ??
+                    [],
                 onChanged: (value) {
                   setState(() {
                     _getSubDisct = value.toString();
@@ -209,20 +220,24 @@ class _DropDownAlamatState extends State<DropDownAlamat> {
               ),
               hint: const Text("Choose District"),
               value: _getDisct,
-              items: _dataDisct.map((item) {
-                return DropdownMenuItem(
-                  child: Text(item['nama']),
-                  value: item['id'].toString(),
-                );
-              }).toList(),
+              items: _dataDisct?.map((item) {
+                    return DropdownMenuItem(
+                      child: Text(item['nama'] ?? ''),
+                      value: item['id'].toString(),
+                    );
+                  })?.toList() ??
+                  [],
               onChanged: (value) {
                 setState(() {
-                  disableSubDisct = false;
-                  _nameSubDisct = value.toString();
-                  _getSubDisct = value.toString();
+                  _nameDisct = _dataDisct?.firstWhere((element) =>
+                          element['id'].toString() ==
+                          value.toString())['nama'] ??
+                      '';
                   _getDisct = value.toString();
                   getDetailDistrict();
                   getSubDistrict();
+                  _getSubDisct = null; // Reset selected sub-district
+                  _nameSubDisct = null; // Reset displayed sub-district name
                 });
               },
             ),
@@ -252,24 +267,29 @@ class _DropDownAlamatState extends State<DropDownAlamat> {
               ),
               hint: const Text("Pilih Provinsi"),
               value: _getProv,
-              items: _dataProv.map(
-                (item) {
-                  return DropdownMenuItem(
-                    child: Text(item['nama']),
-                    value: item['id'].toString(),
-                  );
-                },
-              ).toList(),
+              items: _dataProv?.map(
+                    (item) {
+                      return DropdownMenuItem(
+                        child: Text(item['nama'] ?? ''),
+                        value: item['id'].toString(),
+                      );
+                    },
+                  )?.toList() ??
+                  [],
               onChanged: (value) {
                 setState(
                   () {
-                    disableSubDisct = true;
-                    _nameDisct = value.toString();
-                    _nameSubDisct = value.toString();
-                    _getDisct = value.toString();
-                    _getSubDisct = value.toString();
                     _getProv = value.toString();
-                    getDetailProv();
+                    _nameProv = _dataProv?.firstWhere((element) =>
+                            element['id'].toString() ==
+                            value.toString())['nama'] ??
+                        '';
+                    _getDisct = null; // Reset selected district
+                    _nameDisct = null; // Reset displayed district name
+                    _getSubDisct = null; // Reset selected sub-district
+                    _nameSubDisct = null; // Reset displayed sub-district name
+                    _dataDisct = []; // Clear district data
+                    _dataSubDisct = []; // Clear sub-district data
                     getDistrict();
                   },
                 );
