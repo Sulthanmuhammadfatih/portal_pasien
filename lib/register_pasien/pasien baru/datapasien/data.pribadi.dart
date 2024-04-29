@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:portal_pasien/dashboard/dashboard.dart';
+import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/county.dropdown.dart';
 import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/date.picker.dart';
-import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/dropdown.list.kecamatan.dart';
+import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/dropdown.list.address.dart';
+import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/gender.dropdown.dart';
+import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/maritall.dropdown.dart';
+import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/pj.dropdown.dart';
+import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/religion.dropdown.dart';
+import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/work.dropdown.dart';
 import 'package:portal_pasien/register_pasien/pasien%20baru/type.payment.dart';
 import 'package:portal_pasien/Custom/custom.outline.button.dart';
 import 'package:portal_pasien/Custom/custom_button.dart';
@@ -10,7 +16,7 @@ import 'package:portal_pasien/Custom/edit_text.dart';
 final formKey_ = GlobalKey<FormState>();
 
 class RegisterPasienPage extends StatefulWidget {
-  const RegisterPasienPage({Key? key}) : super(key: key);
+  const RegisterPasienPage({super.key});
 
   @override
   State<RegisterPasienPage> createState() => _RegisterPageState();
@@ -18,15 +24,8 @@ class RegisterPasienPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPasienPage> {
   final TextEditingController nama = TextEditingController();
-  final TextEditingController jenisKelamin = TextEditingController();
   final TextEditingController tempatlahir = TextEditingController();
   final TextEditingController nomerHandphonne = TextEditingController();
-  final TextEditingController agama = TextEditingController();
-  final TextEditingController pekerjaan = TextEditingController();
-  final TextEditingController penanggungJawab = TextEditingController();
-  final TextEditingController statusPernikahan = TextEditingController();
-  final TextEditingController negara = TextEditingController();
-  final TextEditingController provinsi = TextEditingController();
   final TextEditingController alamat = TextEditingController();
   final GlobalKey<FormState> formkey_ = GlobalKey<FormState>();
 
@@ -91,18 +90,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                         const SizedBox(
                           height: 25,
                         ),
-                        EditText(
-                            controller: jenisKelamin,
-                            text: 'Jenis Kelamin',
-                            textInputType: TextInputType.name,
-                            obscure: false,
-                            validator: (jenisKelamin) {
-                              if (jenisKelamin == null ||
-                                  jenisKelamin.isEmpty) {
-                                return 'please enter your gender';
-                              }
-                              return null;
-                            }),
+                        const GenderDropDown(),
                         const SizedBox(
                           height: 25,
                         ),
@@ -132,83 +120,30 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                             validator: (nomerHandphonne) {
                               if (nomerHandphonne == null ||
                                   nomerHandphonne.isEmpty) {
-                                return 'please enter your number phone';
+                                return 'Tolong Di Isi Form Ini';
                               }
                               return null;
                             }),
                         const SizedBox(
                           height: 25,
                         ),
-                        EditText(
-                            controller: agama,
-                            text: 'Agama',
-                            textInputType: TextInputType.name,
-                            obscure: false,
-                            validator: (agama) {
-                              if (agama == null || agama.isEmpty) {
-                                return 'please enter your region';
-                              }
-                              return null;
-                            }),
+                        const ReligionDropDown(),
                         const SizedBox(
                           height: 25,
                         ),
-                        EditText(
-                            controller: pekerjaan,
-                            text: 'Pekerjaan',
-                            textInputType: TextInputType.name,
-                            obscure: false,
-                            validator: (pekerjaan) {
-                              if (pekerjaan == null || pekerjaan.isEmpty) {
-                                return 'please enter your work';
-                              }
-                              return null;
-                            }),
+                        const WorkDropDownList(),
                         const SizedBox(
                           height: 25,
                         ),
-                        EditText(
-                            controller: penanggungJawab,
-                            text: 'Penanggung Jawab',
-                            textInputType: TextInputType.name,
-                            obscure: false,
-                            validator: (penanggungJawab) {
-                              if (penanggungJawab == null ||
-                                  penanggungJawab.isEmpty) {
-                                return 'Mohon di isi untuk form Penanggung jawab';
-                              }
-                              return null;
-                            }),
+                        const PjDropDown(),
                         const SizedBox(
                           height: 25,
                         ),
-                        EditText(
-                            controller: statusPernikahan,
-                            text: 'Status Pernikahan',
-                            textInputType: TextInputType.name,
-                            obscure: false,
-                            validator: (statusPernikahan) {
-                              if (statusPernikahan == null ||
-                                  statusPernikahan.isEmpty) {
-                                return 'Mohon di isi untuk form Status pernikahan';
-                              }
-                              return null;
-                            }),
+                        const MaritallStatusDropDown(),
                         const SizedBox(
                           height: 25,
                         ),
-                        EditText(
-                          controller: negara,
-                          text: 'Kewarganegaraan',
-                          textInputType: TextInputType.name,
-                          obscure: false,
-                          validator: (negara) {
-                            if (negara == null || negara.isEmpty) {
-                              return 'Mohon di isi form kewarganegaraan';
-                            }
-                            return null;
-                          },
-                        ),
+                        const CountryDropDownList(),
                         const SizedBox(
                           height: 25,
                         ),
@@ -222,7 +157,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                             textInputType: TextInputType.name,
                             validator: (alamat) {
                               if (alamat == null || alamat.isEmpty) {
-                                return 'Mohon di isi form alamat';
+                                return 'Tolong Di isi Form Ini';
                               }
                               return null;
                             },

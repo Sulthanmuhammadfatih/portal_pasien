@@ -39,6 +39,7 @@ dependencies:
   iconsax: ^0.0.8
   get: ^4.6.6
   http: ^1.2.1
+  dropdown_button2: ^2.3.9
 
 
 dev_dependencies:
