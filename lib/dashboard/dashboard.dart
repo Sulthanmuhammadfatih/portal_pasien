@@ -160,7 +160,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         IconsWidget(
-                          title: "Fasilitas",
+                        title: "Fasilitas",
                           iconName: "assets/image/hospital.png",
                           onPressed: () {},
                         ),
@@ -181,6 +181,10 @@ class _DashboardPageState extends State<DashboardPage> {
                         ),
                       ],
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text("")
                   ],
                 ),
               ),

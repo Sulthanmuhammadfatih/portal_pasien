@@ -19,7 +19,12 @@ class datePicker extends StatelessWidget {
         filled: true,
         fillColor: Colors.white,
         prefix: const Icon(Icons.calendar_today),
-        enabledBorder: const OutlineInputBorder(borderSide: BorderSide.none),
+        enabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderSide: BorderSide(
+            color: Colors.black12,
+          ),
+        ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
           borderSide: const BorderSide(
