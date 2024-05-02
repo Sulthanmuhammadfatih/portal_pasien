@@ -10,19 +10,47 @@ class RecentFragment extends StatefulWidget {
 class _RecentFragmentState extends State<RecentFragment> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           children: [
-            Container(
-              child: const Text(
+            SizedBox(
+              child: Text(
                 "Recent",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
             ),
-            Container()
+            Row(
+              children: [
+                CircleAvatar(),
+                SizedBox(
+                  width: 10,
+                ),
+                Column(
+                  children: [
+                    Text(
+                      'nama',
+                      style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'tujuan poli',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black26),
+                    )
+                  ],
+                ),
+              ],
+            )
           ],
         ),
       )),

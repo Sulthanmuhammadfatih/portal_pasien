@@ -147,7 +147,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                         const SizedBox(
                           height: 25,
                         ),
-                        DropDownAlamat(),
+                        const DropDownAlamat(),
                         const SizedBox(
                           height: 25,
                         ),

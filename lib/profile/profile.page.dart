@@ -10,6 +10,36 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          child: Column(
+            children: [
+              CircleAvatar(
+                radius: 25,
+                 child: ClipOval(
+                  child: Image.network(""),
+                 ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                "Nama Pasien",
+                style: TextStyle(
+                    fontSize: 16,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.normal),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

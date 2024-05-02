@@ -66,9 +66,9 @@ class Appointment extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ListDoctor()));
+                                builder: (context) => const ListDoctor()));
                       },
-                      text: 'Lanjutkan',
+                      text: 'Lanjutkan'
                     ),
                   ),
                 ],

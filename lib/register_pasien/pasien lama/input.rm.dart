@@ -40,13 +40,6 @@ class InputRM extends StatelessWidget {
                         textInputType: TextInputType.number,
                         obscure: false,
                       ),
-                      const Text(
-                        "Ini gw cuman iseng bikin content",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      ),
                       CustomButton(
                           onPressed: () {
                             Navigator.push(

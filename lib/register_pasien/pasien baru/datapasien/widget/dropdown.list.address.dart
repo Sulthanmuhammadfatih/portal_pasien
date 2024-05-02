@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class DropDownAlamat extends StatefulWidget {
-  DropDownAlamat({Key? key}) : super(key: key);
+  const DropDownAlamat({super.key});
 
   @override
   State<DropDownAlamat> createState() => _DropDownAlamatState();

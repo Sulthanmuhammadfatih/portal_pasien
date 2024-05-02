@@ -2,7 +2,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
 class CountryDropDownList extends StatelessWidget {
-  const CountryDropDownList({Key? key}) : super(key: key);
+  const CountryDropDownList({super.key});
 
   @override
   Widget build(BuildContext context) {

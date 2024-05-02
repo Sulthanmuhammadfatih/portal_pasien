@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portal_pasien/auth/login/sign.in.dart';
+import 'package:portal_pasien/authentication/login/sign.in.dart';
 import 'package:portal_pasien/Custom/custom_button.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -23,7 +23,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
+              SizedBox(
                 width: 300,
                 child: Image.asset(
                   "assets/image/mobile.jpg",
