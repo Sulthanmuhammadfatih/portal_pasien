@@ -1,9 +1,9 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/data.pribadi.dart';
 import 'package:portal_pasien/register_pasien/pasien%20baru/date.appointment.dart';
 import 'package:portal_pasien/Custom/custom.outline.button.dart';
 import 'package:portal_pasien/Custom/custom_button.dart';
-import 'package:portal_pasien/Custom/edit_text.dart';
 
 class PaymentType extends StatefulWidget {
   const PaymentType({super.key});
@@ -15,7 +15,7 @@ class PaymentType extends StatefulWidget {
 class _PaymentTypeState extends State<PaymentType> {
   @override
   Widget build(BuildContext context) {
-    final TextEditingController paymentType = TextEditingController();
+    List<String> typePayment = ['Bpjs', 'Tunai', 'Asuransi'];
 
     return Scaffold(
       body: SafeArea(
@@ -62,17 +62,34 @@ class _PaymentTypeState extends State<PaymentType> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: Colors.white70),
-                    child: EditText(
-                      controller: paymentType,
-                      text: "Pilih Pembayaran",
-                      textInputType: TextInputType.name,
-                      obscure: false,
-                      validator: (payment) {
-                        if (payment == null || payment.isEmpty) {
-                          return 'Isi pembayaran';
+                    child: DropdownButtonFormField2(
+                      items: typePayment
+                          .map((value) => DropdownMenuItem(child: Text(value)))
+                          .toList(),
+                      validator: (value) {
+                        if (value) {
+                          return 'Tolong Di Isi Form Ini. ';
                         }
                         return null;
                       },
+                      onChanged: (value) {},
+                      onSaved: (value) {},
+                      buttonStyleData: const ButtonStyleData(
+                        padding: EdgeInsets.only(right: 8),
+                      ),
+                      iconStyleData: const IconStyleData(
+                        icon: Icon(
+                          Icons.arrow_drop_down,
+                          color: Colors.black45,
+                        ),
+                      ),
+                      dropdownStyleData: DropdownStyleData(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                      menuItemStyleData: const MenuItemStyleData(
+                          padding: EdgeInsets.symmetric(horizontal: 20)),
                     ),
                   ),
                   const SizedBox(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:portal_pasien/dashboard/util/screen/page.dash.dart';
+import 'package:portal_pasien/dashboard/util/page.dash.dart';
 
 class NavBottom extends StatefulWidget {
   const NavBottom({super.key});
@@ -54,7 +54,7 @@ class NavigationController extends GetxController {
 
   final screen = [
     Container(
-      child: const page_dash(),
+      child: const PageDash(),
     ),
     Container(color: Colors.redAccent),
     Container(color: Colors.blue),

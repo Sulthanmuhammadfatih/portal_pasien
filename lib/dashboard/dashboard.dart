@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portal_pasien/dashboard/util/nav.bottom.dart';
-import 'package:portal_pasien/dashboard/util/screen/page.dash.dart';
-
-
+import 'package:portal_pasien/dashboard/util/page.dash.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -24,7 +22,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   horizontal: 20,
                   vertical: 30,
                 ),
-                child: page_dash(),
+                child: PageDash(),
               ),
             ),
           ),
