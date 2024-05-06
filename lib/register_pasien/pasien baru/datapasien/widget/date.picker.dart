@@ -1,17 +1,32 @@
 import 'package:flutter/material.dart';
 
-class datePicker extends StatelessWidget {
-  const datePicker({super.key});
+class DatePicker extends StatefulWidget {
+  const DatePicker({Key? key}) : super(key: key);
+
+  @override
+  _DatePickerState createState() => _DatePickerState();
+}
+
+class _DatePickerState extends State<DatePicker> {
+  DateTime? _selectedDate;
+
+  Future<void> _showDatePicker() async {
+    final pickedDate = await showDatePicker(
+      context: context,
+      initialDate: _selectedDate ?? DateTime.now(),
+      firstDate: DateTime(1800),
+      lastDate: DateTime(2100),
+    );
+
+    if (pickedDate != null && pickedDate != _selectedDate) {
+      setState(() {
+        _selectedDate = pickedDate;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    void showdatePicker() {
-      showDatePicker(
-          context: context,
-          firstDate: DateTime(1800),
-          lastDate: DateTime(2100));
-    }
-
     return TextField(
       decoration: InputDecoration(
         labelText: "Date",
@@ -33,9 +48,12 @@ class datePicker extends StatelessWidget {
         ),
       ),
       readOnly: true,
-      onTap: () {
-        showdatePicker();
-      },
+      onTap: _showDatePicker,
+      controller: TextEditingController(
+        text: _selectedDate != null
+            ? "${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}"
+            : null,
+      ),
     );
   }
 }

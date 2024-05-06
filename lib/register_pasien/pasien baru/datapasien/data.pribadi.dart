@@ -107,7 +107,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                         const SizedBox(
                           height: 25,
                         ),
-                        const datePicker(),
+                        DatePicker(),
                         const SizedBox(
                           height: 25,
                         ),
@@ -134,7 +134,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                         const SizedBox(
                           height: 25,
                         ),
-                        const PjDropDown(),
+                        // const PjDropDown(),
                         const SizedBox(
                           height: 25,
                         ),
