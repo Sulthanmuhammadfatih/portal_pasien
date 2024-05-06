@@ -7,6 +7,7 @@ class CountryDropDownList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> countryItem = ['WNI', 'WNA'];
+    String _selectedOption = '';
 
     return DropdownButtonFormField2(
       hint: const Text("Kewarganegaraan"),
@@ -24,7 +25,9 @@ class CountryDropDownList extends StatelessWidget {
         }
         return null;
       },
-      onChanged: (value) {},
+      onChanged: (value) {
+        _selectedOption = value.toString();
+      },
       onSaved: (value) {},
       buttonStyleData: const ButtonStyleData(
         padding: EdgeInsets.only(right: 8),

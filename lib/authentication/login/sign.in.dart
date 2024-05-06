@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
+  
   Future<void> _signIn() async {
     try {
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(

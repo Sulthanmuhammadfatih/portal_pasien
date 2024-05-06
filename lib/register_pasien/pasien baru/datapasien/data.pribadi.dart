@@ -8,12 +8,10 @@ import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/ma
 import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/pj.dropdown.dart';
 import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/religion.dropdown.dart';
 import 'package:portal_pasien/register_pasien/pasien%20baru/datapasien/widget/work.dropdown.dart';
-import 'package:portal_pasien/register_pasien/pasien%20baru/type.payment.dart';
 import 'package:portal_pasien/Custom/custom.outline.button.dart';
 import 'package:portal_pasien/Custom/custom_button.dart';
 import 'package:portal_pasien/Custom/edit_text.dart';
-
-final formKey_ = GlobalKey<FormState>();
+import 'package:portal_pasien/register_pasien/pasien%20baru/type.payment.dart';
 
 class RegisterPasienPage extends StatefulWidget {
   const RegisterPasienPage({super.key});
@@ -77,16 +75,17 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                     child: Column(
                       children: [
                         EditText(
-                            controller: nama,
-                            text: 'Nama',
-                            textInputType: TextInputType.name,
-                            obscure: false,
-                            validator: (nama) {
-                              if (nama == null || nama.isEmpty) {
-                                return 'please enter your name';
-                              }
-                              return null;
-                            }),
+                          controller: nama,
+                          text: 'Nama',
+                          textInputType: TextInputType.name,
+                          obscure: false,
+                          validator: (nama) {
+                            if (nama == null || nama.isEmpty) {
+                              return 'please enter your name';
+                            }
+                            return null;
+                          },
+                        ),
                         const SizedBox(
                           height: 25,
                         ),

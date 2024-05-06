@@ -33,7 +33,6 @@ dependencies:
   country_picker: ^2.0.25
   firebase_core: ^2.27.2
   firebase_auth: ^4.18.0
-  firebase_storage: ^11.6.11
   shared_preferences: ^2.2.2
   toast: ^0.3.0
   iconsax: ^0.0.8
@@ -42,6 +41,7 @@ dependencies:
   dropdown_button2: ^2.3.9
   mysql_client: ^0.0.27
   dio: ^5.4.3+1
+  cloud_firestore: ^4.17.2
 
 dev_dependencies:
   flutter_test:
