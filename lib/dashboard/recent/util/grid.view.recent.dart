@@ -5,9 +5,7 @@ class GridviewRecent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final List<String> listdataRecent = ['namaDokter', 'nama  '];
-
     return Container();
   }
 }

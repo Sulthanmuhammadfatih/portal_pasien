@@ -20,52 +20,56 @@ class _RegistrationPageState extends State<RegistrationPage> {
     final TextEditingController phoneController = TextEditingController();
     final FirebaseAuth auth = FirebaseAuth.instance;
 
-
     Future verifyPhoneNumber() async {
       String phoneNumber = '+62 ${phoneController.text.trim()}';
       await auth.verifyPhoneNumber(
-          phoneNumber: phoneNumber,
-          verificationCompleted: (PhoneAuthCredential credential) async {
-            await auth.signInWithCredential(credential);
-            print('Authentikasi berhasil : ${credential.smsCode}');
-          },
-          verificationFailed: (FirebaseAuthException exception) {
-            print('Gagal Verifikasi ${exception.message}');
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: const Text('Gagal Verifikasi'),
-                  content: const Text(
-                      'Verifikasi nomer telpon gagal, silahkan coba lagi'),
-                  actions: <Widget>[
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text("OK"),
-                    )
-                  ],
-                );
-              },
-            );
-          },
-          codeAutoRetrievalTimeout: (String verificationId) {
-            print('Waktu habis dalam pengambilan code ${verificationId}');
-            const Duration(seconds: 60);
-          },
-          codeSent: (String verificationId, int? forceResendingToken) {
-            setState(() {
+        phoneNumber: phoneNumber,
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await auth.signInWithCredential(credential);
+          print('Authentikasi berhasil : ${credential.smsCode}');
+        },
+        verificationFailed: (FirebaseAuthException exception) {
+          print('Gagal Verifikasi ${exception.message}');
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text('Gagal Verifikasi'),
+                content: const Text(
+                    'Verifikasi nomer telpon gagal, silahkan coba lagi'),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text("OK"),
+                  )
+                ],
+              );
+            },
+          );
+        },
+        codeAutoRetrievalTimeout: (String verificationId) {
+          print('Waktu habis dalam pengambilan code ${verificationId}');
+          const Duration(seconds: 60);
+        },
+        codeSent: (String verificationId, int? forceResendingToken) {
+          setState(
+            () {
               //Kode telah di kirim
               print('Kode otp telah di kirim : ${verificationId}');
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const OnTimePassword(
-                            verificationId: '',
-                          )));
-            });
-          });
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const OnTimePassword(
+                    verificationId: '',
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      );
     }
 
     Country country = Country(
