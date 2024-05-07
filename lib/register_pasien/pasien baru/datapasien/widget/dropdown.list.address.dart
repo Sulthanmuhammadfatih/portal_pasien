@@ -70,7 +70,7 @@ class _DropDownAlamatState extends State<DropDownAlamat> {
           "https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=$getDisct"),
       headers: {"Accept": "application/json"},
     );
-    var listData = jsonDecode(response.body);
+    var listData = jsonDecode(response.body)["kecamatan"];
     setState(() {
       _dataSubDisct = listData;
     });
@@ -125,42 +125,39 @@ class _DropDownAlamatState extends State<DropDownAlamat> {
   }
 
   Widget _subDistrict(enableSubDist) {
-    return IgnorePointer(
-      ignoring: enableSubDist,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10),
-        child: Align(
-          alignment: Alignment.centerLeft,
-          child: DropdownButtonHideUnderline(
-            child: Container(
-              padding: const EdgeInsets.only(left: 10, right: 10),
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: DropdownButtonFormField(
-                decoration: const InputDecoration(
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, right: 10),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: DropdownButtonHideUnderline(
+          child: Container(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: DropdownButtonFormField(
+              decoration: const InputDecoration(
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white),
                 ),
-                hint: const Text("kecamatan"),
-                value: getSubDisct,
-                items: _dataSubDisct.map((item) {
-                  return DropdownMenuItem(
-                    value: item['id'].toString(),
-                    child: Text(item['nama']),
-                  );
-                }).toList(),
-                onChanged: (value) {
-                  setState(() {
-                    getSubDisct = value.toString();
-                    getDetailSubDistrict();
-                  });
-                },
-                validator: (value) =>
-                    value == null ? 'Silahkan Pilih Kecamatan' : null,
               ),
+              hint: const Text("Pilih Kecamatan"),
+              value: getSubDisct,
+              items: _dataSubDisct.map((item) {
+                return DropdownMenuItem(
+                  value: item['id'].toString(),
+                  child: Text(item['nama']),
+                );
+              }).toList(),
+              onChanged: (value) {
+                setState(() {
+                  getSubDisct = value.toString();
+                  getDetailSubDistrict();
+                });
+              },
+              validator: (value) =>
+                  value == null ? 'Silahkan Pilih Kecamatan' : null,
             ),
           ),
         ),
