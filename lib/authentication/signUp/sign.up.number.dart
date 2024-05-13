@@ -186,7 +186,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SignUpWithEmail()));
+                            builder: (context) =>  const SignUpWithEmail()));
                   },
                   text: "Register with email"),
             ),
@@ -214,7 +214,7 @@ class ClickableText extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginPage()));
+            context, MaterialPageRoute(builder: (context) => const LoginPage()));
       },
       child: Text(
         "Login",

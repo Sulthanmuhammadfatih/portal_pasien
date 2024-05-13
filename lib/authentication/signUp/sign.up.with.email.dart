@@ -120,7 +120,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => RegistrationPage()));
+                              builder: (context) =>  const RegistrationPage()));
                     },
                     text: "Sign Up With Number"),
               ),
@@ -151,7 +151,7 @@ class ClickableText extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => LoginPage(),
+            builder: (context) => const LoginPage(),
           ),
         );
       },

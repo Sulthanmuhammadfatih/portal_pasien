@@ -8,7 +8,7 @@ import 'package:portal_pasien/authentication/login/sign.in.dart';
 import 'package:portal_pasien/authentication/signUp/sign.up.with.email.dart';
 
 class LoginWithNumber extends StatefulWidget {
-  LoginWithNumber({Key? key}) : super(key: key);
+  const LoginWithNumber({super.key});
 
   @override
   State<LoginWithNumber> createState() => _LoginWithNumberState();
@@ -61,7 +61,7 @@ class _LoginWithNumberState extends State<LoginWithNumber> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => OnTimePassword(verificationId: ''),
+                  builder: (context) => const OnTimePassword(verificationId: ''),
                 ),
               );
             },
@@ -184,7 +184,7 @@ class _LoginWithNumberState extends State<LoginWithNumber> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SignUpWithEmail()));
+                            builder: (context) => const SignUpWithEmail()));
                   },
                   text: "Register with email"),
             ),
@@ -212,7 +212,7 @@ class ClickableText extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginPage()));
+            context, MaterialPageRoute(builder: (context) => const LoginPage()));
       },
       child: Text(
         "Login",

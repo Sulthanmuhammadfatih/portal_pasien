@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:portal_pasien/Custom/custom_outline.dart';
-import 'package:portal_pasien/dashboard/dashboard.dart';
 import 'package:portal_pasien/Custom/custom_button.dart';
 import 'package:portal_pasien/Custom/edit_text.dart';
 import 'package:portal_pasien/authentication/login/sign.in.with.number.dart';
@@ -30,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.push(
         // ignore: use_build_context_synchronously
         context,
-        MaterialPageRoute(builder: (context) => const DashboardPage()),
+        MaterialPageRoute(builder: (context) => const Navigator()),
       );
     } catch (e) {
       // ignore: avoid_print
@@ -139,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginWithNumber()));
+                                builder: (context) => const LoginWithNumber()));
                       },
                       text: "Sign In With Number",
                     ),
