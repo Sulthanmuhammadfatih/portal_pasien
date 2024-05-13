@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:portal_pasien/authentication/login/sign.in.dart';
-
+import 'package:portal_pasien/screen/widget/pasien%20baru/datapasien/data.pribadi.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -26,6 +25,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
         ),
-        home: LoginPage());
+        home: RegisterPasienPage());
   }
 }
