@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portal_pasien/authentication/login/sign.in.dart';
+import 'package:portal_pasien/auth/login/sign.in.dart';
 import 'package:portal_pasien/Custom/custom_button.dart';
 
 class OnBoardingPage extends StatefulWidget {
