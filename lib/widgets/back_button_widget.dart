@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class OutlineButtonBack extends StatelessWidget {
+class BackButtonWidget extends StatelessWidget {
   final VoidCallback onPressed;
   final Icon _icon = const Icon(
     color: Colors.black12,
@@ -8,7 +8,7 @@ class OutlineButtonBack extends StatelessWidget {
     size: 20,
   );
 
-  const OutlineButtonBack({
+  const BackButtonWidget({
     super.key,
     required this.onPressed,
   });

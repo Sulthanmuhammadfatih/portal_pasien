@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CustomOutlineButton extends StatelessWidget {
+class SecondaryButtonWidget extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
 
-  const CustomOutlineButton(
+  const SecondaryButtonWidget(
       {super.key, required this.onPressed, required this.text});
 
   @override

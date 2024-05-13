@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:portal_pasien/Custom/custom_button.dart';
-import 'package:portal_pasien/Custom/edit_text.dart';
+import 'package:portal_pasien/widgets/primary_button_widget.dart';
+import 'package:portal_pasien/widgets/input_field_widget.dart';
 
 class OnTimePassword extends StatefulWidget {
   final String verificationId;
@@ -70,7 +70,7 @@ class _OnTimePasswordState extends State<OnTimePassword> {
                 const SizedBox(
                   height: 15,
                 ),
-                EditText(
+                InputFieldWidget(
                   controller: otpSignIp,
                   text: "OTP",
                   textInputType: TextInputType.number,
@@ -82,7 +82,7 @@ class _OnTimePasswordState extends State<OnTimePassword> {
                 SizedBox(
                   height: 50,
                   width: double.infinity,
-                  child: CustomButton(
+                  child: PrimaryButtonWidget(
                       onPressed: () {
                         String smsCode = otpSignIp.text.trim();
                         signInWithNumberPhone(smsCode);

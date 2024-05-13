@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portal_pasien/dashboard/register_pasien/pasien%20baru/date.appointment.dart';
-import 'package:portal_pasien/Custom/custom.outline.button.dart';
+import 'package:portal_pasien/widgets/back_button_widget.dart';
 
 class PaymentType extends StatefulWidget {
   const PaymentType({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class _PaymentTypeState extends State<PaymentType> {
                   SizedBox(
                     height: 50,
                     width: 50,
-                    child: OutlineButtonBack(
+                    child: BackButtonWidget(
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -72,7 +72,7 @@ class _PaymentTypeState extends State<PaymentType> {
                         ),
                         onChanged: (value) {
                           setState(() {
-                           _selectedType = value;
+                            _selectedType = value;
                           });
                         },
                         validator: (value) {

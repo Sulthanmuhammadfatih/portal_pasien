@@ -1,8 +1,8 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:portal_pasien/Custom/custom_button.dart';
-import 'package:portal_pasien/Custom/custom_outline.dart';
+import 'package:portal_pasien/widgets/primary_button_widget.dart';
+import 'package:portal_pasien/widgets/secondary_button_widget.dart';
 import 'package:portal_pasien/authentication/login/otp.page.dart';
 import 'package:portal_pasien/authentication/login/sign.in.dart';
 import 'package:portal_pasien/authentication/signUp/sign.up.with.email.dart';
@@ -168,7 +168,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
             SizedBox(
               width: double.infinity,
               height: 50,
-              child: CustomButton(
+              child: PrimaryButtonWidget(
                 onPressed: () {
                   verifyPhoneNumber();
                 },
@@ -181,7 +181,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
             SizedBox(
               height: 50,
               width: double.infinity,
-              child: CustomOutlineButton(
+              child: SecondaryButtonWidget(
                   onPressed: () {
                     Navigator.push(
                         context,

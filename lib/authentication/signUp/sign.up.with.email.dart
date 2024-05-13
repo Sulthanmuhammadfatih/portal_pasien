@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portal_pasien/Custom/custom_button.dart';
-import 'package:portal_pasien/Custom/custom_outline.dart';
-import 'package:portal_pasien/Custom/edit_text.dart';
+import 'package:portal_pasien/widgets/primary_button_widget.dart';
+import 'package:portal_pasien/widgets/secondary_button_widget.dart';
+import 'package:portal_pasien/widgets/input_field_widget.dart';
 import 'package:portal_pasien/authentication/login/sign.in.dart';
 import 'package:portal_pasien/authentication/signUp/sign.up.number.dart';
 
@@ -53,7 +53,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
               const SizedBox(
                 height: 40,
               ),
-              EditText(
+              InputFieldWidget(
                 controller: namaPertama,
                 text: "Nama Pertama",
                 textInputType: TextInputType.name,
@@ -62,7 +62,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
               const SizedBox(
                 height: 15,
               ),
-              EditText(
+              InputFieldWidget(
                 controller: namaTerakhir,
                 text: "Nama Terakhir",
                 textInputType: TextInputType.name,
@@ -71,7 +71,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
               const SizedBox(
                 height: 15,
               ),
-              EditText(
+              InputFieldWidget(
                 controller: email,
                 text: "Email",
                 textInputType: TextInputType.emailAddress,
@@ -86,7 +86,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
               const SizedBox(
                 height: 15,
               ),
-              EditText(
+              InputFieldWidget(
                 controller: password,
                 text: "Password",
                 textInputType: TextInputType.visiblePassword,
@@ -104,7 +104,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
               SizedBox(
                 height: 50,
                 width: double.infinity,
-                child: CustomButton(
+                child: PrimaryButtonWidget(
                   onPressed: () {},
                   text: "Register",
                 ),
@@ -115,12 +115,12 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
               SizedBox(
                 height: 50,
                 width: double.infinity,
-                child: CustomOutlineButton(
+                child: SecondaryButtonWidget(
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>  const RegistrationPage()));
+                              builder: (context) => const RegistrationPage()));
                     },
                     text: "Sign Up With Number"),
               ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portal_pasien/Custom/custom_button.dart';
+import 'package:portal_pasien/widgets/primary_button_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ResultPage extends StatelessWidget {
@@ -33,18 +33,20 @@ class ResultPage extends StatelessWidget {
       FirebaseFirestore.instance.collection('');
 
   Future<void> addDataToFirebase() {
-    return dataCollection.add({
-      'nama': nama,
-      'jeniskelamin': jeniskelamin,
-      'tempatlahir': tempatLahir,
-      'tanggallahir': tanggalLahir,
-      'nomerhandphone': nomerHandphone,
-      'penanggungjawab': penanggungjawab,
-      'statuspernikahan': statusPernikahan,
-      'provinsi': provinsi,
-      'alamat': alamat
-    }).then((value) => print('Data berhasil Di Kirim'))
-    .catchError((error) => print("Gagal Menambahkan Data : $Error"));
+    return dataCollection
+        .add({
+          'nama': nama,
+          'jeniskelamin': jeniskelamin,
+          'tempatlahir': tempatLahir,
+          'tanggallahir': tanggalLahir,
+          'nomerhandphone': nomerHandphone,
+          'penanggungjawab': penanggungjawab,
+          'statuspernikahan': statusPernikahan,
+          'provinsi': provinsi,
+          'alamat': alamat
+        })
+        .then((value) => print('Data berhasil Di Kirim'))
+        .catchError((error) => print("Gagal Menambahkan Data : $Error"));
   }
 
   @override
@@ -136,7 +138,7 @@ class ResultPage extends StatelessWidget {
               SizedBox(
                 height: 50,
                 width: double.infinity,
-                child: CustomButton(
+                child: PrimaryButtonWidget(
                   onPressed: () {},
                   text: 'submit',
                 ),

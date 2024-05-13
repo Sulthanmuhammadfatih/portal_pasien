@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Custom/custom_button.dart';
+import '../widgets/primary_button_widget.dart';
 import 'register_pasien/pasien baru/datapasien/data.pribadi.dart';
 import 'register_pasien/pasien lama/input.rm.dart';
 import 'util/button.menu.dart';
@@ -141,7 +141,7 @@ class _NavigationExampleState extends State<Navigation> {
                                         children: [
                                           SizedBox(
                                             height: 40,
-                                            child: CustomButton(
+                                            child: PrimaryButtonWidget(
                                                 onPressed: () {
                                                   Navigator.push(
                                                       context,
@@ -153,7 +153,7 @@ class _NavigationExampleState extends State<Navigation> {
                                           ),
                                           SizedBox(
                                             height: 40,
-                                            child: CustomButton(
+                                            child: PrimaryButtonWidget(
                                                 onPressed: () {
                                                   Navigator.push(
                                                     context,

@@ -7,9 +7,9 @@ import 'package:portal_pasien/dashboard/register_pasien/pasien%20baru/datapasien
 import 'package:portal_pasien/dashboard/register_pasien/pasien%20baru/datapasien/util/maritall.dropdown.dart';
 import 'package:portal_pasien/dashboard/register_pasien/pasien%20baru/datapasien/util/religion.dropdown.dart';
 import 'package:portal_pasien/dashboard/register_pasien/pasien%20baru/datapasien/util/work.dropdown.dart';
-import 'package:portal_pasien/Custom/custom.outline.button.dart';
-import 'package:portal_pasien/Custom/custom_button.dart';
-import 'package:portal_pasien/Custom/edit_text.dart';
+import 'package:portal_pasien/widgets/back_button_widget.dart';
+import 'package:portal_pasien/widgets/primary_button_widget.dart';
+import 'package:portal_pasien/widgets/input_field_widget.dart';
 import 'package:portal_pasien/dashboard/register_pasien/pasien%20baru/type.payment.dart';
 
 class RegisterPasienPage extends StatefulWidget {
@@ -41,7 +41,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                     SizedBox(
                       height: 50,
                       width: 50,
-                      child: OutlineButtonBack(
+                      child: BackButtonWidget(
                         onPressed: () {
                           Navigator.push(
                               context,
@@ -73,7 +73,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                     key: formkey_,
                     child: Column(
                       children: [
-                        EditText(
+                        InputFieldWidget(
                           controller: nama,
                           text: 'Nama',
                           textInputType: TextInputType.name,
@@ -92,7 +92,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                         const SizedBox(
                           height: 25,
                         ),
-                        EditText(
+                        InputFieldWidget(
                             controller: tempatlahir,
                             text: 'Tempat Lahir',
                             textInputType: TextInputType.name,
@@ -110,7 +110,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                         const SizedBox(
                           height: 25,
                         ),
-                        EditText(
+                        InputFieldWidget(
                             controller: nomerHandphonne,
                             text: 'Nomer Handphone',
                             textInputType: TextInputType.number,
@@ -149,7 +149,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                         const SizedBox(
                           height: 25,
                         ),
-                        EditText(
+                        InputFieldWidget(
                             controller: alamat,
                             text: 'alamat',
                             textInputType: TextInputType.name,
@@ -166,7 +166,7 @@ class _RegisterPageState extends State<RegisterPasienPage> {
                         SizedBox(
                             height: 50,
                             width: double.infinity,
-                            child: CustomButton(
+                            child: PrimaryButtonWidget(
                                 onPressed: () {
                                   if (formkey_.currentState!.validate()) {
                                     Navigator.push(

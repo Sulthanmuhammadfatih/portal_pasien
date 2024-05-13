@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portal_pasien/Custom/custom_button.dart';
-import 'package:portal_pasien/Custom/edit_text.dart';
+import 'package:portal_pasien/widgets/primary_button_widget.dart';
+import 'package:portal_pasien/widgets/input_field_widget.dart';
 import 'package:portal_pasien/dashboard/register_pasien/pasien%20baru/type.payment.dart';
 
 class InputRM extends StatelessWidget {
@@ -34,13 +34,13 @@ class InputRM extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   child: Column(
                     children: [
-                      EditText(
+                      InputFieldWidget(
                         controller: inputNomerRM,
                         text: "Masukan Nomer RM Anda",
                         textInputType: TextInputType.number,
                         obscure: false,
                       ),
-                      CustomButton(
+                      PrimaryButtonWidget(
                           onPressed: () {
                             Navigator.push(
                                 context,

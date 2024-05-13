@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
+class PrimaryButtonWidget extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
 
-  const CustomButton({super.key, required this.onPressed, required this.text});
+  const PrimaryButtonWidget(
+      {super.key, required this.onPressed, required this.text});
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

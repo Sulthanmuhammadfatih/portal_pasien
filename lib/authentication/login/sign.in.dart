@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:portal_pasien/Custom/custom_outline.dart';
-import 'package:portal_pasien/Custom/custom_button.dart';
-import 'package:portal_pasien/Custom/edit_text.dart';
+import 'package:portal_pasien/widgets/secondary_button_widget.dart';
+import 'package:portal_pasien/widgets/primary_button_widget.dart';
+import 'package:portal_pasien/widgets/input_field_widget.dart';
 import 'package:portal_pasien/authentication/login/sign.in.with.number.dart';
 import 'package:portal_pasien/authentication/signUp/sign.up.number.dart';
 
@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  EditText(
+                  InputFieldWidget(
                     controller: emailController,
                     text: "Email",
                     textInputType: TextInputType.emailAddress,
@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 10,
                   ),
-                  EditText(
+                  InputFieldWidget(
                     controller: passwordController,
                     text: "Password",
                     textInputType: TextInputType.visiblePassword,
@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 50,
                     width: double.infinity,
-                    child: CustomButton(onPressed: _signIn, text: "Sign In"),
+                    child: PrimaryButtonWidget(onPressed: _signIn, text: "Sign In"),
                   ),
                   const SizedBox(
                     height: 10,
@@ -133,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 50,
                     width: double.infinity,
-                    child: CustomOutlineButton(
+                    child: SecondaryButtonWidget(
                       onPressed: () {
                         Navigator.push(
                             context,
